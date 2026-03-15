@@ -1,6 +1,5 @@
 https://midterm-exam-project.vercel.app/
-https://midterm-exam-project.vercel.app/
-https://midterm-exam-project.vercel.app/
+
 
 # NEULibraryGuard 🛡️
 
