@@ -51,6 +51,14 @@ export const saveLog = (log: VisitLog) => {
   localStorage.setItem("neu_logs", JSON.stringify([...current, log]));
 };
 
+export const addVisitor = (visitor: Visitor) => {
+  const current = getVisitors();
+  if (current.find(v => v.id.toLowerCase() === visitor.id.toLowerCase())) {
+    throw new Error("Visitor ID already registered.");
+  }
+  localStorage.setItem("neu_visitors", JSON.stringify([...current, visitor]));
+};
+
 export const updateVisitorStatus = (visitorId: string, isBlocked: boolean) => {
   const visitors = getVisitors();
   const updated = visitors.map(v => v.id === visitorId ? { ...v, isBlocked } : v);

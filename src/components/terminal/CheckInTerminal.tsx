@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -9,8 +9,9 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { findVisitor, saveLog, type Visitor } from "@/app/lib/db"
 import { useToast } from "@/hooks/use-toast"
-import { Scan, Mail, CheckCircle2, ArrowLeft, Lightbulb } from "lucide-react"
+import { Scan, Mail, CheckCircle2, ArrowLeft, Lightbulb, UserPlus } from "lucide-react"
 import { suggestLibraryResources, type SuggestLibraryResourcesOutput } from "@/ai/flows/suggest-library-resources"
+import Link from "next/link"
 
 const PURPOSES = [
   "reading books",
@@ -37,7 +38,7 @@ export function CheckInTerminal() {
       toast({
         variant: "destructive",
         title: "Access Denied",
-        description: "Invalid ID or Institutional Email. Please contact the librarian."
+        description: "Invalid ID or Institutional Email. If you are new, please register first."
       })
       return
     }
@@ -118,6 +119,15 @@ export function CheckInTerminal() {
                 Authenticate Access
               </Button>
             </form>
+
+            <div className="mt-6 pt-6 border-t">
+              <p className="text-sm text-center text-muted-foreground mb-4">First time here?</p>
+              <Link href="/register" className="w-full">
+                <Button variant="outline" className="w-full gap-2 text-primary border-primary/20 hover:bg-primary/5">
+                  <UserPlus className="w-4 h-4" /> Register New Account
+                </Button>
+              </Link>
+            </div>
           </CardContent>
           <CardFooter className="flex justify-center text-xs text-muted-foreground">
             System monitored by NEU Information Services
