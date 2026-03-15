@@ -97,8 +97,7 @@ export function CheckInTerminal() {
             <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
               <Scan className="w-8 h-8 text-primary" />
             </div>
-            <CardTitle className="text-3xl font-headline font-bold text-primary">NEU Library Guard</CardTitle>
-            <CardDescription className="text-lg">Please tap your RFID card or enter your institutional email</CardDescription>
+            <CardTitle className="text-3xl font-headline font-bold text-primary">NEU Library</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleAuth} className="space-y-4">
