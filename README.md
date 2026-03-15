@@ -1,4 +1,5 @@
 https://midterm-exam-project.vercel.app/
+THE ADMIN DASHBOARD PASSWORD IS: 123
 
 
 # NEULibraryGuard 🛡️
